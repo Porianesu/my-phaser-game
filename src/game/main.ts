@@ -1,8 +1,8 @@
-// import { Boot } from './scenes/Boot'
-// import { GameOver } from './scenes/GameOver'
-// import { Game as MainGame } from './scenes/Game'
-// import { MainMenu } from './scenes/MainMenu'
-// import { Preloader } from './scenes/Preloader'
+import { Boot } from './scenes/Boot'
+import { GameOver } from './scenes/GameOver'
+import { Game as MainGame } from './scenes/Game'
+import { MainMenu } from './scenes/MainMenu'
+import { Preloader } from './scenes/Preloader'
 import { AUTO, Game } from 'phaser'
 import { TestScene } from './scenes/Test.ts'
 
@@ -15,14 +15,13 @@ const config: Phaser.Types.Core.GameConfig = {
   physics: {
     default: 'arcade',
     arcade: {
-      gravity: { y: 300 },
+      gravity: { x: 0, y: 300 },
       debug: false,
     },
   },
   parent: 'game-container',
-  // backgroundColor: '#028af8',
-  // scene: [Boot, Preloader, MainMenu, MainGame, GameOver],
-  scene: TestScene,
+  backgroundColor: '#028af8',
+  scene: [Boot, Preloader, MainMenu, MainGame, TestScene, GameOver],
 }
 
 const StartGame = (parent: string) => {
